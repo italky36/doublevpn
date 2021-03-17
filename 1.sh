@@ -26,9 +26,9 @@ echo "Please wait..."
 ansible-playbook main.yml
 
 CNF=$(cat  /root/doublevpn/wg-client.conf);
-cp /root/doublevpn/wg-client.conf /etc/wireguard/wg-client.conf
 MYIP=$(curl -4 https://icanhazip.com/);
 
+cp /root/doublevpn/wg-client.conf /etc/wireguard/wg-client.conf
 #docker
 #curl -fsSL https://get.docker.com/ | sh
 #sudo systemctl start docker
