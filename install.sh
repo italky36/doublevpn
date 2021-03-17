@@ -18,12 +18,13 @@ else
     echo "Ansible already installed"
 fi
 
-git clone https://github.com/it-toppp/doublevpn.git && cd /root/doublevpn/
+git clone https://github.com/italky36/doublevpn.git && cd /root/doublevpn/
 
 ansible-playbook gen_conf.yml
 echo "Please wait..."
 ansible-playbook main.yml &> /dev/null
 CNF=$(cat  /root/doublevpn/wg-client.conf);
+cp /root/doublevpn/wg-client.conf /etc/wireguard/wg-client.conf
 rm -R /root/install.sh
 echo  "Please copy this content to your TunSafe configuration file"
 echo "#####################################################################################################################"
